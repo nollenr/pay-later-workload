@@ -57,6 +57,15 @@ Start by creating the tables [DDL](pay-later-ddl.txt).
 |ledger|[IMPORT INTO ledger](IMPORT-INTO-ledger.txt)|
 
 ## Workload
+BEFORE RUNNING THE WORKLOAD, the following table must be created in the `workload` database:
+``` 
+CREATE TABLE public.dbworkload_syncup (
+       thread INT8 NOT NULL,
+       thread_starting_loop BOOL NULL DEFAULT false,
+       CONSTRAINT dbworkload_syncup_pkey PRIMARY KEY (thread ASC)
+);
+```
+
 Run the workload from a server that has access to the database.  You'll need to have `dbworkload` installed and running on your server.   
 
 ```
