@@ -1,0 +1,2 @@
+IMPORT INTO ledger (id, created, updated, mate_entry_id, account_id, txn_group, txn_type, balance_type, amount, version, effective)
+CSV DATA ('s3://nollen-bucket/workloads/pay-later/ledger/export/2025-05-06/*?AWS_ACCESS_KEY_ID={Key}&AWS_SECRET_ACCESS_KEY={Secret}') WITH DETACHED;
